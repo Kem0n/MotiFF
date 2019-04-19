@@ -12,7 +12,7 @@ namespace MotiFF
 {
     public partial class Form_Start : Form
     {
-        public int number;
+        public static int number;
         Form1 form_end = new Form1();
         public Form_Start()
         {

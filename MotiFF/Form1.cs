@@ -66,5 +66,35 @@ namespace MotiFF
             label40.Text = String.Empty;
             label50.Text = String.Empty;
         }
+        //TODO: Сделать корректировку на высокосные года.
+        public int countYear(int number,int futureYear)
+        {
+            int currentYaer = Int32.Parse(DateTime.Now.Year.ToString());
+            int result = currentYaer - number;
+
+            int hour = 16;
+            int dayInYaer = 365;
+
+            if (futureYear > currentYaer)
+            {
+                switch (futureYear)
+                {
+                    case 20:
+                        return (hour * dayInYaer) * 20;
+                    case 30:
+                        return (hour * dayInYaer) * 30;
+                    case 40:
+                        return (hour * dayInYaer) * 40;
+                    case 50:
+                        return (hour * dayInYaer) * 50;
+                    default:
+                        return 0;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
