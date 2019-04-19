@@ -27,7 +27,7 @@ namespace MotiFF
 
             timer2.Enabled = true;
             timer2.Start();
-            timer2.Interval = 600000;
+            timer2.Interval = 6000;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -61,10 +61,10 @@ namespace MotiFF
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label20.Text = String.Empty;
-            label30.Text = String.Empty;
-            label40.Text = String.Empty;
-            label50.Text = String.Empty;
+            label20.Text = countYear(Form_Start.number, 20).ToString() + " часов";
+            label30.Text = countYear(Form_Start.number, 30).ToString() + " часов";
+            label40.Text = countYear(Form_Start.number, 40).ToString() + " часов";
+            label50.Text = countYear(Form_Start.number, 50).ToString() + " часов";
         }
         //TODO: Сделать корректировку на высокосные года.
         public int countYear(int number,int futureYear)
@@ -75,7 +75,7 @@ namespace MotiFF
             int hour = 16;
             int dayInYaer = 365;
 
-            if (futureYear > currentYaer)
+            if (futureYear > result)
             {
                 switch (futureYear)
                 {
@@ -95,6 +95,11 @@ namespace MotiFF
             {
                 return 0;
             }
+        }
+
+        public int LivedInHour(DateTime date)
+        {
+
         }
     }
 }
